@@ -2,7 +2,7 @@
 
 A portfolio demo of a dental clinic website for two markets, with online booking, a same-day emergency queue, a WhatsApp/SMS-style chat and an AI front desk.
 
-**Live demo:** _link added after deployment_
+**Live demo:** https://orela-dental-demo.netlify.app
 
 > Orela Dental is fictional. The site is modelled on real dental clinic websites, but the clinic, people, addresses and phone numbers are made up, and all images and videos are AI-generated. Forms never send anything, and the site is set to `noindex`.
 
