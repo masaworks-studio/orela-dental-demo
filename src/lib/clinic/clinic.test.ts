@@ -178,6 +178,20 @@ describe("receptionist", () => {
     expect(route("").intent).toBe("unknown");
   });
 
+  it("does not treat \"how long does it take\" as a price question in any language", () => {
+    expect(classify("How long does a cleaning take?")).toBe("unknown");
+    expect(classify("¿Cuánto dura una limpieza?")).toBe("unknown");
+    expect(classify("¿Cuánto tiempo tarda un empaste?")).toBe("unknown");
+    expect(classify("Quant dura una neteja?")).toBe("unknown");
+    expect(classify("Combien de temps dure un détartrage ?")).toBe("unknown");
+    // With a price word, it is still a price question
+    expect(classify("¿Cuánto cuesta y cuánto dura una limpieza?")).toBe("prices");
+    expect(classify("Combien coûte un détartrage ?")).toBe("prices");
+    expect(classify("Quant costa una neteja?")).toBe("prices");
+    // Other rules still apply
+    expect(classify("How long until you open?")).toBe("hours");
+  });
+
   it("matches short words as whole words (hi does not match this)", () => {
     expect(classify("is this the clinic")).toBe("unknown");
   });

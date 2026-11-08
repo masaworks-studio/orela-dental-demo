@@ -66,14 +66,25 @@ function hasWord(text: string, word: string): boolean {
   return text.includes(word);
 }
 
+// "How long does it take?" in es / ca / fr uses the same words as "how much" (cuanto, quant, combien).
+// When the question is about time and names no price word, it is not a price question.
+const DURATION = ["how long", "cuanto dura", "cuanto tiempo", "cuanto tarda", "quant dura", "quant de temps", "quant triga", "combien de temps", "duree", "duracion", "durada"];
+const PRICE_ONLY = ["price", "cost", "fee", "precio", "cuesta", "cuestan", "preu", "costa", "prix", "coute", "tarif"];
+
+function isDurationQuestion(text: string): boolean {
+  return DURATION.some((w) => hasWord(text, w)) && !PRICE_ONLY.some((w) => hasWord(text, w));
+}
+
 export function classify(message: string): Intent {
   const text = normalize(message);
   if (!text) return "unknown";
+  const duration = isDurationQuestion(text);
   // Check symptoms before other words ("I want to book, my tooth hurts" counts as symptoms)
   const symptom = RULES.find((r) => r.intent === "symptom")!;
   if (symptom.words.some((w) => hasWord(text, w))) return "symptom";
   for (const rule of RULES) {
     if (rule.intent === "symptom") continue;
+    if (rule.intent === "prices" && duration) continue;
     if (rule.words.some((w) => hasWord(text, w))) return rule.intent;
   }
   return "unknown";

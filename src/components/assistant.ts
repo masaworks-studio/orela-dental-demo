@@ -65,10 +65,11 @@ export const ANSWERS: Record<Exclude<Intent, "unknown">, Record<Locale, string>>
 };
 
 export const SUGGESTIONS: Record<Locale, string[]> = {
-  en: ["What are your hours?", "How much is a cleaning?", "My tooth hurts", "Talk to a person"],
-  es: ["¿Cuál es su horario?", "¿Cuánto cuesta una limpieza?", "Me duele una muela", "Hablar con una persona"],
-  ca: ["Quin horari teniu?", "Quant costa una neteja?", "Em fa mal una dent", "Parlar amb una persona"],
-  fr: ["Quels sont vos horaires ?", "Combien coûte un détartrage ?", "J'ai mal aux dents", "Parler à quelqu'un"],
+  // Price (fixed answer), duration (answered by AI from the clinic's information), symptom (sent to the phone), handoff
+  en: ["How much is a cleaning?", "How long does a cleaning take?", "My tooth hurts", "Talk to a person"],
+  es: ["¿Cuánto cuesta una limpieza?", "¿Cuánto dura una limpieza?", "Me duele una muela", "Hablar con una persona"],
+  ca: ["Quant costa una neteja?", "Quant dura una neteja?", "Em fa mal una dent", "Parlar amb una persona"],
+  fr: ["Combien coûte un détartrage ?", "Combien de temps dure un détartrage ?", "J'ai mal aux dents", "Parler à quelqu'un"],
 };
 
 export type AssistantContext = {
