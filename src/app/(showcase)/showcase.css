@@ -1,0 +1,26 @@
+.show-nav { display: flex; flex-wrap: wrap; }
+@media (max-width: 860px) { .show-nav { display: flex; gap: 12px; font-size: 14px; } .site-header .wrap { flex-wrap: wrap; } }
+.feature-list { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.feature { display: grid; grid-template-columns: 2.5rem 1fr auto; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--line); text-decoration: none; align-items: baseline; }
+.feature .n { font-family: var(--font-head); font-size: 22px; color: var(--muted); }
+.tier { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line); white-space: nowrap; }
+.tier-starter { background: var(--panel); }
+.tier-growth { background: #e6f4ea; color: #12512f; border-color: #bfe3cb; }
+.tier-pro { background: #111418; color: #fff; border-color: #111418; }
+.phone { width: 320px; max-width: 100%; border: 10px solid #111; border-radius: 36px; background: #ece5dd; padding: 16px 12px; min-height: 520px; display: flex; flex-direction: column; gap: 8px; font: 14px/1.4 system-ui, sans-serif; color: #111; }
+.phone .bubble { max-width: 85%; padding: 8px 10px; border-radius: 10px; background: #fff; box-shadow: 0 1px 1px rgba(0,0,0,.08); white-space: pre-line; }
+.phone .bubble.out { align-self: flex-end; background: #dcf8c6; }
+.phone .sys { align-self: center; font-size: 12px; color: #555; background: rgba(255,255,255,.7); padding: 2px 8px; border-radius: 8px; }
+.phone .menu { display: grid; gap: 6px; }
+.phone .menu button { font: inherit; padding: 8px; border-radius: 8px; border: 1px solid #b7d4c0; background: #fff; color: #0b6b3a; cursor: pointer; }
+.phone.sms { background: #fff; }
+.phone.sms .bubble { background: #e9e9eb; }
+.phone.sms .bubble.out { background: #0a84ff; color: #fff; }
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.kpi { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
+.kpi b { display: block; font-family: var(--font-head); font-size: 34px; }
+.kpi span { color: var(--muted); font-size: 14px; }
+.bars { display: flex; align-items: flex-end; gap: 3px; height: 160px; border-bottom: 1px solid var(--line); }
+.bars div { flex: 1; background: var(--ink); opacity: .8; border-radius: 2px 2px 0 0; min-height: 1px; }
+.flow { width: 100%; height: auto; }
+@media (max-width: 860px) { .kpis { grid-template-columns: 1fr 1fr; } .feature { grid-template-columns: 2rem 1fr; } .feature .tier { grid-column: 2; justify-self: start; } }
