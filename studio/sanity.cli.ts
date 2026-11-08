@@ -1,0 +1,5 @@
+import { defineCliConfig } from "sanity/cli";
+
+export default defineCliConfig({
+  api: { projectId: "w7b2l6xq", dataset: "production" },
+});
