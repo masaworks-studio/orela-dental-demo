@@ -1,0 +1,19 @@
+node_modules/
+.next/
+out/
+.netlify/
+.env*
+!.env.example
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+studio/node_modules/
+studio/dist/
+studio/.sanity/
+src/content/.generated/
+
+# Private notes and tooling (kept locally, not published)
+CLAUDE.md
+docs/
+design/
+.claude/
