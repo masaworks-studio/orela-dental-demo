@@ -22,8 +22,8 @@ export default function Entry() {
           <ol className="prose" style={{ paddingLeft: 20, margin: 0 }}>
             <li>The status bar: open now, closing time and the emergency queue, in the clinic's own time zone.</li>
             <li>Pick a free time on the home page and go through booking.</li>
-            <li>Ask the front-desk assistant something, including a symptom.</li>
-            <li>Switch the style (Direct, Calm, Studio) in the bottom-left corner.</li>
+            <li>Ask the front-desk assistant something the rules don't cover (the AI answers from the clinic's information), then mention a symptom.</li>
+            <li>Switch the style (Direct, Calm, Studio) in the dark demo bar at the top of the clinic site.</li>
             <li>See the automation demos under <Link href="/demo/">Features</Link>.</li>
           </ol>
         </div>
